@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1d2a44"/>
+  <path d="M0 514c164-62 308-61 452 0s304 62 450 0 199-51 298-18v134H0z" fill="#223652"/>
+  <path d="M0 552c165-63 310-61 453 1s302 62 449 0 200-50 298-18" fill="none" stroke="#42637d" stroke-width="3" opacity=".7"/>
+  <text x="82" y="171" fill="#f4ecd8" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="3">NAUTICAL</text>
+  <text x="82" y="246" fill="#f4ecd8" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="3">SLIDE RULER</text>
+  <path d="M84 283h330" stroke="#f28c28" stroke-width="6" stroke-linecap="round"/>
+  <text x="84" y="342" fill="#c5d2e0" font-family="system-ui, sans-serif" font-size="27">TIME · DISTANCE · SPEED</text>
+  <text x="84" y="391" fill="#c5d2e0" font-family="system-ui, sans-serif" font-size="20">A practical sailing calculator</text>
+  <g transform="translate(850 315)">
+    <circle r="230" fill="#f4ecd8" stroke="#0f1b30" stroke-width="11"/>
+    <circle r="171" fill="#2f7d4f" stroke="#12331f" stroke-width="9"/>
+    <circle r="101" fill="#266d48" stroke="#12331f" stroke-width="8"/>
+    <g stroke="#1d2a44" stroke-linecap="round">
+      <path d="M0-207v27M0 207v-27M-207 0h27M207 0h-27" stroke-width="10"/>
+      <path d="m-146-146 20 20m292 292-20-20M146-146l-20 20m-292 292 20-20" stroke-width="8"/>
+      <path d="M0-170v20M0 170v-20M-170 0h20M170 0h-20M-120-120l14 14m226 226-14-14m14-226-14 14m-226 226 14-14" stroke-width="5"/>
+    </g>
+    <path d="M0-227v42" stroke="#2680eb" stroke-width="15" stroke-linecap="round"/>
+    <path d="M53-164a171 171 0 0 1 85 63" stroke="#e23d36" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <path d="M-113 128a171 171 0 0 1-51-88" stroke="#f28c28" stroke-width="13" fill="none" stroke-linecap="round"/>
+    <circle r="54" fill="#1d2a44" stroke="#f4ecd8" stroke-width="6"/>
+    <path d="M0-38v78m-26-8 26 8 26-8-26 8m0-67 30 42H0v-42l-30 42H0" fill="none" stroke="#f4ecd8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle r="7" fill="#f28c28"/>
+  </g>
+</svg>

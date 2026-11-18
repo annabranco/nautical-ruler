@@ -1,0 +1,16 @@
+{
+  "name": "Nautical Slide Ruler",
+  "short_name": "Slide Ruler",
+  "description": "An interactive nautical slide ruler for calculating sailing time, distance, and speed.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#1d2a44",
+  "theme_color": "#1d2a44",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

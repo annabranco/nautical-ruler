@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#1d2a44"/>
+  <circle cx="256" cy="256" r="211" fill="#f4ecd8" stroke="#0f1b30" stroke-width="10"/>
+  <circle cx="256" cy="256" r="157" fill="#2f7d4f" stroke="#12331f" stroke-width="8"/>
+  <circle cx="256" cy="256" r="91" fill="#266d48" stroke="#12331f" stroke-width="7"/>
+  <g stroke="#1d2a44" stroke-linecap="round">
+    <path d="M256 65v25M256 422v25M65 256h25M422 256h25" stroke-width="9"/>
+    <path d="m121 121 18 18m254 254 18 18M391 121l-18 18M121 391l18-18" stroke-width="7"/>
+    <path d="M256 99v12m0 290v12M99 256h12m290 0h12M145 145l9 9m204 204 9 9m0-222-9 9M145 367l9-9" stroke-width="5"/>
+  </g>
+  <g stroke-linecap="round" fill="none">
+    <path d="M256 49v39" stroke="#2680eb" stroke-width="13"/>
+    <path d="M306 103a160 160 0 0 1 79 58" stroke="#e23d36" stroke-width="11"/>
+    <path d="M151 368a160 160 0 0 1-48-82" stroke="#f28c28" stroke-width="11"/>
+  </g>
+  <circle cx="256" cy="256" r="49" fill="#1d2a44" stroke="#f4ecd8" stroke-width="5"/>
+  <path d="M256 211v78m-27-8 27 8 27-8-27 8m0-67 30 42h-30v-42l-30 42h30" fill="none" stroke="#f4ecd8" stroke-linecap="round" stroke-linejoin="round" stroke-width="7"/>
+  <circle cx="256" cy="256" r="7" fill="#f28c28"/>
+</svg>

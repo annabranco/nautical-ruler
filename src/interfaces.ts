@@ -8,6 +8,12 @@ export type ScaleMode = 'log' | 'linear';
 
 export type ScaleRange = [number, number];
 
+export type TimerMode = 'following' | 'running' | 'paused';
+
+export interface TimerProps {
+	timeMinutes: number;
+}
+
 export interface State {
 	values: Values;
 	edited: Key[];

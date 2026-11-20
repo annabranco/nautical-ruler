@@ -93,20 +93,28 @@ export const Header = styled.header`
 	width: calc(100% - 16px);
 	margin-inline: auto;
 	box-sizing: border-box;
-	padding: 12px 20px;
+	min-height: 82px;
+	padding: 12px 64px 12px 20px;
 	display: flex;
-	flex-direction: column;
 	align-items: center;
-	gap: 2px;
+	justify-content: flex-start;
+	gap: 22px;
 	background: #dce5ef;
 	border: 1px solid #c5d2e0;
 	border-radius: 18px;
+
+	@media (max-width: 480px) {
+		min-height: 68px;
+		gap: 16px;
+		padding: 10px 58px 10px 12px;
+	}
 `;
 
 export const InstructionsButton = styled.button`
 	position: absolute;
-	top: 12px;
+	top: 50%;
 	right: 14px;
+	transform: translateY(-50%);
 	width: 38px;
 	height: 38px;
 	display: grid;
@@ -123,7 +131,7 @@ export const InstructionsButton = styled.button`
 
 	&:hover {
 		background: #fff;
-		transform: translateY(-1px);
+		transform: translateY(calc(-50% - 1px));
 	}
 
 	&:focus-visible {
@@ -285,6 +293,11 @@ export const BoatBadge = styled.div`
 	box-shadow:
 		0 0 0 1px rgba(94, 174, 201, 0.3),
 		0 0 18px rgba(93, 196, 225, 0.58);
+
+	@media (max-width: 480px) {
+		width: 44px;
+		height: 44px;
+	}
 `;
 
 export const BoatMark = styled.img`
@@ -292,13 +305,18 @@ export const BoatMark = styled.img`
 	width: 50px;
 	height: 44px;
 	object-fit: contain;
+
+	@media (max-width: 480px) {
+		width: 40px;
+		height: 36px;
+	}
 `;
 
 export const Title = styled.h1`
-	width: 100%;
+	min-width: 0;
 	margin: 0;
 	color: #1d2a44;
-	text-align: center;
+	text-align: left;
 	font:
 		600 clamp(28px, 4vw, 34px)/1.08 'Palatino Linotype',
 		Palatino,
@@ -306,6 +324,10 @@ export const Title = styled.h1`
 		Georgia,
 		serif;
 	letter-spacing: 0.01em;
+
+	@media (max-width: 480px) {
+		font-size: clamp(20px, 5.4vw, 24px);
+	}
 `;
 
 export const MainStage = styled.div`
@@ -318,6 +340,216 @@ export const MainStage = styled.div`
 
 	@media (max-width: 480px) {
 		min-height: min(calc((100vw - 32px) * 1.04), 581px);
+	}
+`;
+
+export const RulerTimerStage = styled.div`
+	width: min(100%, 860px);
+	min-height: min(95.5vw, 581px);
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: clamp(16px, 3vw, 36px);
+
+	@media (max-width: 768px) {
+		width: 100%;
+		min-height: 0;
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	@container app-shell (max-width: 768px) {
+		width: 100%;
+		min-height: 0;
+		flex-direction: column;
+		gap: 14px;
+	}
+`;
+
+export const ManualStage = styled.div`
+	width: min(100%, 640px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 14px;
+`;
+
+export const TimerDevice = styled.section`
+	width: min(100%, 160px);
+	flex: 0 0 auto;
+	box-sizing: border-box;
+	padding: 5px;
+	border: 1px solid #536a78;
+	border-radius: 13px;
+	background: linear-gradient(145deg, #263b46, #14242e 72%);
+	box-shadow:
+		0 10px 22px rgba(22, 39, 52, 0.18),
+		inset 0 1px 0 rgba(255, 255, 255, 0.13);
+`;
+
+export const TimerBody = styled.div`
+	padding: 4px;
+	border: 1px solid rgba(182, 206, 215, 0.42);
+	border-radius: 8px;
+	background: #192b32;
+`;
+
+export const TimerLabel = styled.div`
+	margin: 0 2px 4px;
+	color: #b5c8ce;
+	font:
+		700 7px/1 system-ui,
+		sans-serif;
+	letter-spacing: 0.2em;
+	text-align: left;
+	text-transform: uppercase;
+`;
+
+export const TimerScreen = styled.div`
+	min-height: 46px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1px;
+	padding: 4px 1px;
+	border: 1px solid #314c42;
+	border-radius: 7px;
+	background: #0c1714;
+	box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.55);
+	color: #80ffb4;
+
+	.digit-cell {
+		display: inline-flex;
+		align-items: center;
+		gap: 1px;
+		flex: 0 0 auto;
+	}
+
+	.digit {
+		position: relative;
+		width: clamp(12px, 1.5vw, 15px);
+		height: clamp(24px, 2.8vw, 29px);
+		display: block;
+	}
+
+	.digit i {
+		position: absolute;
+		display: block;
+		border-radius: 2px;
+		background: #80ffb4;
+		top: 0;
+		left: 0;
+		opacity: 0.1;
+	}
+
+	.digit i[data-lit='true'] {
+		opacity: 1;
+		box-shadow: 0 0 4px rgba(128, 255, 180, 0.55);
+	}
+
+	.digit i[data-segment='a'],
+	.digit i[data-segment='g'],
+	.digit i[data-segment='d'] {
+		width: 66%;
+		height: 7%;
+		left: 17%;
+	}
+
+	.digit i[data-segment='a'] {
+		top: 2%;
+	}
+
+	.digit i[data-segment='g'] {
+		top: 46%;
+	}
+
+	.digit i[data-segment='d'] {
+		top: 91%;
+	}
+
+	.digit i[data-segment='b'],
+	.digit i[data-segment='c'],
+	.digit i[data-segment='e'],
+	.digit i[data-segment='f'] {
+		width: 8%;
+		height: 38%;
+	}
+
+	.digit i[data-segment='b'],
+	.digit i[data-segment='c'] {
+		right: 4%;
+		left: auto;
+	}
+
+	.digit i[data-segment='e'],
+	.digit i[data-segment='f'] {
+		left: 4%;
+	}
+
+	.digit i[data-segment='b'],
+	.digit i[data-segment='f'] {
+		top: 8%;
+	}
+
+	.digit i[data-segment='c'],
+	.digit i[data-segment='e'] {
+		top: 54%;
+	}
+
+	.colon {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 5px;
+	}
+
+	.colon i {
+		width: 2.5px;
+		height: 2.5px;
+		border-radius: 50%;
+		background: #80ffb4;
+		box-shadow: 0 0 4px rgba(128, 255, 180, 0.55);
+	}
+`;
+
+export const TimerButtons = styled.div`
+	display: flex;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 6px;
+`;
+
+export const TimerButton = styled.button`
+	width: 28px;
+	height: 25px;
+	display: grid;
+	place-items: center;
+	padding: 0;
+	border: 1px solid #536e79;
+	border-radius: 9px;
+	background: #263b46;
+	color: #dcebed;
+	cursor: pointer;
+	transition:
+		background 140ms ease,
+		transform 140ms ease;
+
+	&:hover {
+		background: #36525f;
+		transform: translateY(-1px);
+	}
+
+	&:focus-visible {
+		outline: 3px solid #80ffb4;
+		outline-offset: 2px;
+	}
+
+	svg {
+		width: 12px;
+		height: 12px;
+		fill: currentColor;
 	}
 `;
 

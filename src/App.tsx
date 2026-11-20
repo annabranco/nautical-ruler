@@ -2,6 +2,7 @@ import { useReducer, useState } from 'react';
 import { initial, setBoatType, setValue } from './model';
 import { Ruler } from './Ruler';
 import { Readouts } from './Readouts';
+import { Timer } from './Timer';
 import type { AppAction, Key } from './interfaces';
 import {
 	BoatBadge,
@@ -17,6 +18,8 @@ import {
 	CompactReadoutRegion,
 	Overlay,
 	Page,
+	ManualStage,
+	RulerTimerStage,
 	Title,
 } from './styled';
 const App = () => {
@@ -70,8 +73,8 @@ const App = () => {
 					/>
 				</CompactReadoutRegion>
 			)}
-			<MainStage>
-				{state.boatType === 'manual' ? (
+			{state.boatType === 'manual' ? (
+				<ManualStage>
 					<Readouts
 						values={state.values}
 						derived={state.derived}
@@ -81,10 +84,16 @@ const App = () => {
 						onBoatTypeChange={(boatType) => dispatch({ type: 'boat', boatType })}
 						onChange={onChange}
 					/>
-				) : (
-					<Ruler values={state.values} boatType={state.boatType} onChange={onChange} />
-				)}
-			</MainStage>
+					<Timer timeMinutes={state.values.time} />
+				</ManualStage>
+			) : (
+				<RulerTimerStage>
+					<MainStage>
+						<Ruler values={state.values} boatType={state.boatType} onChange={onChange} />
+					</MainStage>
+					<Timer timeMinutes={state.values.time} />
+				</RulerTimerStage>
+			)}
 			<Readouts
 				values={state.values}
 				derived={state.derived}
